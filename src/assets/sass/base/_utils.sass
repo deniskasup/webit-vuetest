@@ -1,0 +1,102 @@
+$black: #1A1A1A
+$white: #fff
+$red: #BE1010
+$blue: rgb(111, 140, 172)
+$gray: #B8B8B8
+$light-gray: #E9E9EA
+$dark-gray: #5A5A5A
+
+$desktop-min: 1024px
+$widescreen-min: 1440px
+$mobile-max: 425px
+$tablet-max: 767px
+$fieldHeight: 48px
+$border-radius: 8px
+// -==========================================================================================================
+@mixin from-tablet()
+    @media (min-width: $tablet-max)
+        @content
+
+@mixin from-desktop()
+    @media (min-width: $desktop-min)
+        @content
+
+@mixin from-widescreen()
+    @media (min-width: $widescreen-min)
+        @content
+
+@mixin from-mob()
+    @media (min-width: $mobile-max + 1)
+        @content
+
+@mixin while-mob()
+    @media (max-width: $mobile-max)
+        @content
+
+@mixin until-tablet()
+    @media (max-width: $tablet-max)
+        @content
+
+@mixin until-desktop()
+    @media (max-width: $desktop-min - 1)
+        @content
+
+@mixin until-widescreen()
+    @media (max-width: $widescreen-min - 1)
+        @content
+
+// -==========================================================================================================
+@mixin media-until($width)
+    @media (max-width: $width)
+        @content
+
+@mixin media-from($width)
+    @media (min-width: $width)
+        @content
+
+
+// ===========
+%vscroll
+    scrollbar-color: $red #F2F2F2
+    scrollbar-width: thin
+    &::-webkit-scrollbar
+        appearance: none
+        -webkit-appearance: none
+        width: 6px
+        border-radius: 5px
+    &::-webkit-scrollbar-track
+        border-radius: 2px
+        background: #F2F2F2
+    &::-webkit-scrollbar-thumb
+        background-color: $red
+        border-radius: 4px
+        border: 1px solid #F2F2F2
+
+
+%btn-base
+    user-select: none
+    cursor: pointer
+    padding: 0 24px
+    display: flex
+    align-items: center
+    justify-content: center
+    font-weight: 500
+    overflow: hidden
+    position: relative
+    transition: color .3s, background-color .3s
+    z-index: 1
+    flex-shrink: 0
+    +until-tablet
+        padding: 0 11px
+        height: 36px
+        font-size: 12px
+
+    & > svg
+        transition: filter .3s
+        margin-right: 20px
+
+    &:disabled, &.disabled
+        opacity: .5
+        pointer-events: none
+
+

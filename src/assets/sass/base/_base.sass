@@ -1,0 +1,136 @@
+[v-cloak]
+    display: none !important
+
+html
+    height: 100%
+    font-size: 16px
+    line-height: 1.57
+    scroll-behavior: smooth
+    +until-tablet
+        font-size: 15px
+
+*
+    box-sizing: border-box
+
+body
+    width: 100%
+    height: 100%
+    padding: 0
+    margin: 0
+    color: $black
+    position: relative
+    background-color: $white
+    @extend %vscroll
+
+select, input, textarea, button
+    color: $black
+    appearance: none
+
+ul, ol, h1, h2, h3, h4, a
+    list-style: none
+    padding: 0
+    margin: 0
+    text-decoration: none
+
+.wrapper
+    width: 100%
+    margin: 0 auto
+    max-width: 1732px
+    display: flex
+    padding: 0 20px
+
+// buttons,inputs=================================================================================================================================
+*, *::after, *::before
+    -webkit-tap-highlight-color: transparent
+
+button
+    font-size: 14px
+    cursor: pointer
+    background: none
+    border: none
+
+    &:active
+        outline: none
+
+    &:focus
+        outline: none
+
+input, textarea
+    border: none
+
+a
+    color: black
+
+    &:active
+        outline: none
+
+    &:focus
+        outline: none
+
+input:focus, input:active, select:focus, select:active, textarea:focus, textarea:active
+    outline: none
+
+.submit-button
+    display: flex
+    justify-content: center
+    align-items: center
+    color: $white
+    font-size: 20px
+    font-family: 'CeraPro', sans-serif
+    font-weight: 500
+    background-color: $red
+    padding: 16px 32px
+    border-radius: 100px
+    transition: box-shadow .4s
+    +until-tablet
+        padding: 14px 20px
+        font-size: 16px
+    &.arrow
+        &::after
+            content: ''
+            width: 5px
+            margin-left: 10px
+            height: 5px
+            border-left: 1px solid
+            border-bottom: 1px solid
+            transform: rotate(-135deg)
+    &.mini
+        font-size: 14px
+        font-weight: normal
+        padding: 12px 25px
+
+
+    & svg
+        fill: $white
+        margin-right: 15px
+
+    &:hover
+        box-shadow: 2px 2px 7px rgba(190, 16, 16, .3)
+
+
+// text==============================================================================================================================================
+
+
+
+h1
+    font-size: 60px
+    line-height: 1.2
+    font-weight: normal
+    +media-until(1450px)
+        font-size: 50px
+    +until-desktop
+        font-size: 40px
+    +until-tablet
+        font-size: 30px
+
+h2
+    font-weight: bold
+    font-size: 32px
+    line-height: 1.2
+    +media-until(1450px)
+        font-size: 28px
+    +until-desktop
+        font-size: 26px
+    +until-tablet
+        font-size: 24px
+
